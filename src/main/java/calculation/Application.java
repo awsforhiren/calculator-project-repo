@@ -3,10 +3,11 @@ package main.java.calculation;
 /******************************************************************************************************************************************
  *
  * The Calculator program is complete the operation with any number of input parameters separated by space.
- * e.g. 2 + 2 MULTIPLICATION * 5 DIVISION - 3
+ * e.g. 2 + 2 MULTIPLICATION 6 * 5 DIVISION 4 - 3
  * System validates the above pattern. Every digit or operator after space needed to separate them.
  * It also checks if there is no input provided.
- *
+ * Possible Operator are - ADDITION,SUBTRACTION,MULTIPLICATION,DIVISION,+,-,*,/
+ * Use any double value for the Operands
  * @Hiren Modi 25/11/2022
  * ****************************************************************************************************************************************
  */
