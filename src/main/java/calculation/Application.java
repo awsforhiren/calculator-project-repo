@@ -12,7 +12,7 @@ package main.java.calculation;
  */
 public class Application {
     public static void main(String[] args) throws Exception {
-        System.out.printf("Input ::= " + String.join(" ", args) + "\n");
+        System.out.println("Input ::= " + String.join(" ", args));
         Calculator calculator = new Calculator();
         double calcResult = calculator.CalcResult(String.join(" ", args));
         System.out.println("Calculator result is : " + calcResult);
