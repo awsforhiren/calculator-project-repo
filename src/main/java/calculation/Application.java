@@ -1,10 +1,16 @@
 package main.java.calculation;
 
 /******************************************************************************************************************************************
- *
  * The Calculator program is complete the operation with any number of input parameters separated by space.
- * e.g. 2 + 2 MULTIPLICATION 6 * 5 DIVISION 4 - 3
- * System validates the above pattern. Every digit or operator after space needed to separate them.
+ * Example 1 -> 2 + 2
+ * Example 1 -> 2 ADDITION 2
+ * Example 1 -> 2 - 2
+ * Example 1 -> 2 SUBTRACTION 2
+ * Example 1 -> 2 * 2
+ * Example 1 -> 2 MULTIPLICATION 2
+ * Example 1 -> 2 / 2
+ * Example 1 -> 2 DIVISION 2
+ * System validates the above pattern like format - Operand Operation Operand
  * It also checks if there is no input provided.
  * Possible Operator are - ADDITION,SUBTRACTION,MULTIPLICATION,DIVISION,+,-,*,/
  * Use any double value for the Operands
