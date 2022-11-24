@@ -1,5 +1,7 @@
 package main.java.calculation;
 
+import main.java.calculation.services.servicesimpl.CalculatorServiceImpl;
+
 /******************************************************************************************************************************************
  * The Calculator program is complete the operation with any number of input parameters separated by space.
  * Example 1 -> 2 + 2
@@ -20,7 +22,7 @@ package main.java.calculation;
 public class Application {
     public static void main(String[] args) throws Exception {
         System.out.println("Input ::= " + String.join(" ", args));
-        Calculator calculator = new Calculator();
+        CalculatorServiceImpl calculator = new CalculatorServiceImpl();
         double calcResult = calculator.CalcResult(String.join(" ", args));
         System.out.println("Calculator result is : " + calcResult);
     }

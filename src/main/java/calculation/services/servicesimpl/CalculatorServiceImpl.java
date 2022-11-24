@@ -1,12 +1,14 @@
-package main.java.calculation;
+package main.java.calculation.services.servicesimpl;
 
+import main.java.calculation.services.CalculatorService;
+import main.java.calculation.utils.NumberUtils;
 import org.junit.platform.commons.util.StringUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import static java.lang.Double.parseDouble;
 
-public class Calculator {
+public class CalculatorServiceImpl {
     public double CalcResult(String inputData) throws Exception {
         double result = 0.0;
         validateInputData(inputData);
@@ -19,28 +21,28 @@ public class Calculator {
             double operand2 = parseDouble(inputDataArray[index + 2]);
             switch (operation) {
                 case "+":
-                    result = CalcOperation.addOperation(operand1, operand2);
+                    result = CalculatorService.addOperation(operand1, operand2);
                     break;
                 case "ADDITION":
-                    result = CalcOperation.addOperation(operand1, operand2);
+                    result = CalculatorService.addOperation(operand1, operand2);
                     break;
                 case "-":
-                    result = CalcOperation.subtractOperation(operand1, operand2);
+                    result = CalculatorService.subtractOperation(operand1, operand2);
                     break;
                 case "SUBTRACTION":
-                    result = CalcOperation.subtractOperation(operand1, operand2);
+                    result = CalculatorService.subtractOperation(operand1, operand2);
                     break;
                 case "*":
-                    result = CalcOperation.multiplyOperation(operand1, operand2);
+                    result = CalculatorService.multiplyOperation(operand1, operand2);
                     break;
                 case "MULTIPLICATION":
-                    result = CalcOperation.multiplyOperation(operand1, operand2);
+                    result = CalculatorService.multiplyOperation(operand1, operand2);
                     break;
                 case "/":
-                    result = CalcOperation.divisionOperation(operand1, operand2);
+                    result = CalculatorService.divisionOperation(operand1, operand2);
                     break;
                 case "DIVISION":
-                    result = CalcOperation.divisionOperation(operand1, operand2);
+                    result = CalculatorService.divisionOperation(operand1, operand2);
                     break;
             }
             index = index + 2;

@@ -1,18 +1,14 @@
-package main.java.calculation;
+package main.java.calculation.servicesimpl;
 
-import org.junit.Rule;
+import main.java.calculation.services.servicesimpl.CalculatorServiceImpl;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.*;
 
-public class CalculatorTest {
-    @Rule
-    public ExpectedException thrown = ExpectedException.none();
-
+public class CalculatorServiceImplTest {
     @Test
     public void whenExceptionThrown_whileInvalidInputDataProvidedTest() {
-        Calculator calculator = new Calculator();
+        CalculatorServiceImpl calculator = new CalculatorServiceImpl();
         Exception exception = assertThrows(Exception.class, () -> {
             calculator.CalcResult("2 + 4 * 8 /6");
         });
@@ -34,7 +30,7 @@ public class CalculatorTest {
 
     @Test
     public void calculator_ResultTest() throws Exception {
-        Calculator calc = new Calculator();
+        CalculatorServiceImpl calc = new CalculatorServiceImpl();
         assertTrue("Expected & Actual Results are equals.",5.0 == calc.CalcResult("2 + 3"));
         assertFalse("Expected & Actual Results are equals.",5.0 == calc.CalcResult("2 Addition 3 + 2"));
         assertFalse("Expected & Actual Results are equals.",5.0 == calc.CalcResult("2 + 3 Addition 2"));
@@ -61,5 +57,4 @@ public class CalculatorTest {
 
         assertTrue("Expected & Actual Results are equals.",8.0 == calc.CalcResult("2 + 4 * 8 / 6"));
     }
-
 }
