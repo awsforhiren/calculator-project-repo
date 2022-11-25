@@ -4,14 +4,14 @@ import main.java.calculation.services.servicesimpl.CalculatorServiceImpl;
 
 /******************************************************************************************************************************************
  * The Calculator program is complete the operation with any number of input parameters separated by space.
- * Example 1 -> 2 + 2
- * Example 1 -> 2 ADDITION 2
- * Example 1 -> 2 - 2
- * Example 1 -> 2 SUBTRACTION 2
- * Example 1 -> 2 * 2
- * Example 1 -> 2 MULTIPLICATION 2
- * Example 1 -> 2 / 2
- * Example 1 -> 2 DIVISION 2
+ * Example 1 :: 2 + 2
+ * Example 2 :: 2 ADDITION 2
+ * Example 3 :: 2 - 2
+ * Example 4 :: 2 SUBTRACTION 2
+ * Example 5 :: 2 * 2
+ * Example 6 :: 2 MULTIPLICATION 2
+ * Example 7 :: 2 / 2
+ * Example 8 :: 2 DIVISION 2
  * System validates the above pattern like format - Operand Operation Operand
  * It also checks if there is no input provided.
  * Possible Operator are - ADDITION,SUBTRACTION,MULTIPLICATION,DIVISION,+,-,*,/

@@ -1,11 +1,14 @@
 package main.java.calculation.services.servicesimpl;
 
+import main.java.calculation.enums.OperatorEnum;
 import main.java.calculation.services.CalculatorService;
 import main.java.calculation.utils.NumberUtils;
 import org.junit.platform.commons.util.StringUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import static java.lang.Double.parseDouble;
 
 public class CalculatorServiceImpl {
@@ -13,35 +16,34 @@ public class CalculatorServiceImpl {
         double result = 0.0;
         validateInputData(inputData);
         String inputDataArray[] = inputData.toUpperCase().split("\\s+");
-
         int index = 0;
         double operand1 = parseDouble(inputDataArray[index]);
         while (index < inputDataArray.length - 1) {
-            String operation = inputDataArray[index + 1];
+            OperatorEnum operation = OperatorEnum.findByName(inputDataArray[index + 1]);
             double operand2 = parseDouble(inputDataArray[index + 2]);
             switch (operation) {
-                case "+":
+                case ADDITION:
                     result = CalculatorService.addOperation(operand1, operand2);
                     break;
-                case "ADDITION":
+                case PLUS:
                     result = CalculatorService.addOperation(operand1, operand2);
                     break;
-                case "-":
+                case SUBTRACTION:
                     result = CalculatorService.subtractOperation(operand1, operand2);
                     break;
-                case "SUBTRACTION":
+                case MINUS:
                     result = CalculatorService.subtractOperation(operand1, operand2);
                     break;
-                case "*":
+                case MULTIPLICATION:
                     result = CalculatorService.multiplyOperation(operand1, operand2);
                     break;
-                case "MULTIPLICATION":
+                case MULTIPLY:
                     result = CalculatorService.multiplyOperation(operand1, operand2);
                     break;
-                case "/":
+                case DIVISION:
                     result = CalculatorService.divisionOperation(operand1, operand2);
                     break;
-                case "DIVISION":
+                case DIVIDE:
                     result = CalculatorService.divisionOperation(operand1, operand2);
                     break;
             }
@@ -51,7 +53,8 @@ public class CalculatorServiceImpl {
         return result;
     }
     private void validateInputData(String inputData) throws Exception {
-        List<String> OPERATIONS = Arrays.asList("ADDITION,SUBTRACTION,MULTIPLICATION,DIVISION,+,-,*,/".split(","));
+        List<String> OPERATIONS = Arrays.stream(OperatorEnum.values()).map(OperatorEnum::getOperator).collect(Collectors.toList());
+        //List<String> OPERATIONS = Arrays.asList("ADDITION,SUBTRACTION,MULTIPLICATION,DIVISION,+,-,*,/".split(","));
 
         try {
             if(StringUtils.isBlank(inputData))
