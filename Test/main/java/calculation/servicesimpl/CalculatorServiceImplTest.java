@@ -13,7 +13,7 @@ public class CalculatorServiceImplTest {
             calculator.CalcResult("2 + 4 * 8 /6");
         });
 
-        String expectedMessage = "User has provided invalid OPERAND / OPERATIONS";
+        String expectedMessage = "User has provided invalid OPERAND/OPERATIONS";
         String actualMessage = exception.getMessage();
 
         assertTrue(actualMessage.contains(expectedMessage));

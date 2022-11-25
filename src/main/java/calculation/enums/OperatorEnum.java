@@ -22,7 +22,7 @@ public enum OperatorEnum {
         OperatorEnum resultEnum = Arrays.stream(OperatorEnum.values())
                 .filter(e -> e.operator.equals(inputKey))
                 .findFirst()
-                .orElseThrow(() -> new IllegalStateException(String.format("Unsupported type %s.", inputKey)));
+                .orElseThrow(() -> new IllegalStateException(String.format("Unsupported operator %s.", inputKey)));
         return resultEnum;
     }
 }

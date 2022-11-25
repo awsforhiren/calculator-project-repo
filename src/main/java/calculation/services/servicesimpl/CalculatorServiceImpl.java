@@ -54,8 +54,6 @@ public class CalculatorServiceImpl {
     }
     private void validateInputData(String inputData) throws Exception {
         List<String> OPERATIONS = Arrays.stream(OperatorEnum.values()).map(OperatorEnum::getOperator).collect(Collectors.toList());
-        //List<String> OPERATIONS = Arrays.asList("ADDITION,SUBTRACTION,MULTIPLICATION,DIVISION,+,-,*,/".split(","));
-
         try {
             if(StringUtils.isBlank(inputData))
                 throw new Exception("Please provide the valid input data. Please provide data in \"Operand Operation Operand \" format");
@@ -71,7 +69,7 @@ public class CalculatorServiceImpl {
             }
 
             if(errorInputDataList != null && errorInputDataList.size() != 0)
-                throw new Exception("User has provided invalid OPERAND / OPERATIONS" + errorInputDataList);
+                throw new Exception("User has provided invalid OPERAND/OPERATIONS" + errorInputDataList);
         } catch (Exception exception) {
             System.out.println("Unexpected Error Occured :: " + exception.getMessage());
             throw new Exception(exception.getMessage());
